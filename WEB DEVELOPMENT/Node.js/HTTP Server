@@ -1,0 +1,44 @@
+// index.js
+
+const http  = require("http");
+const fs = require("fs");
+const myServer = http.createServer((req, res) =>{
+    // console.log(req.headers);
+    const log = `${Date.now()}: New Req Recieved\n`;
+    fs.appendFile('log.txt', log, (err, data)=>{
+        switch(req.url){
+            case '/':
+                res.end("HomePage");
+                break;
+            case "/about":
+                res.end("I am Ashu");
+                break;
+            default:
+                res.end("404 Not Found");
+            
+
+        }
+        res.end("Hello From Server");
+
+
+    });
+});
+myServer.listen(8000, () => console.log("Server Started!"));
+
+
+
+// package.json
+
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
