@@ -40,3 +40,24 @@ app.delete('/api/users/:id', (req, res) => {
 
 
 app.listen(PORT, () => console.log(`Server started at Pole`));
+
+
+
+
+
+///package.json
+
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
