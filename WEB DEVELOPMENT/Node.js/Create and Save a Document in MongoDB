@@ -1,0 +1,11 @@
+const User = require('./models/User');
+
+const newUser = new User({
+  name: 'Khushi',
+  age: 21,
+  email: 'khushi@example.com'
+});
+
+newUser.save()
+  .then(() => console.log('User saved'))
+  .catch(err => console.error('Save failed:', err));
